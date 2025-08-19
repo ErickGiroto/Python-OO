@@ -24,6 +24,15 @@ class Pessoa:
         print(f'{self.nome} está falando sobre {assunto}.')
         self.falando = True
 
+    # Manipulação com á variavel falando! ---------------------------------------
+    # Fazer a pessoa parar de falar!
+    def parar_falar(self):
+        if not self.falando:
+            print(f'{self.nome} não está falando.')
+            return
+
+        print(f'{self.nome} parou de falar!')
+        self.falando = False
 
     # Manipulação com á variavel comendo! ---------------------------------------
     # Definindo status da função comer, mais que 01 vez
@@ -32,14 +41,21 @@ class Pessoa:
             print(f'{self.nome} já está comendo {alimento}.')
             return # O código para aqui!
 
+        if self.falando:  # Critério pra saber si a pessoa está comendo e que nao pode falar
+            print(f'{self.nome} não pode come falando')
+            return
+
+
         print(f'{self.nome} está comendo {alimento}.') # Critério pra saber si é a 1 refeição
         self.comendo = True
 
+    # Manipulação com á variavel comendo! ---------------------------------------
     # Definindo status da função comer, para PARAR de comer
     def para_comer(self):
         if not self.comendo:
             print(f'{self.nome} não está comendo.')
             return
+
 
         print(f'{self.nome} parou de comer.')
         self.comendo = False
