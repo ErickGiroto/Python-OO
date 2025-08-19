@@ -1,8 +1,16 @@
+# Importando a biblioteca data
+from datetime import datetime
+
 # Criando um molde que representa uma pessoa como objeto
-# Necessario a criação de uma classe para esse molde
+# Necessary a criação de uma classe para esse molde
 
 class Pessoa:
-    # Quando uma função está dentro de uma classe é chamado de metodo da classe
+    # Definindo uma variable data da classe Pessoa
+    # Essa variable será acessada por todas as funções dessa classe.
+    ano_atual = int(datetime.strftime(datetime.now(), '%Y'))
+
+
+    # Quando uma função está numa classe é chamado de methods da classe
     def __init__(self, nome, idade, comendo=False, falando=False): # self significa o direcionamento dessa função para o objeto
         self.nome = nome
         self.idade = idade
@@ -10,8 +18,8 @@ class Pessoa:
         self.falando = falando
 
 
-    # Manipulação com á variavel falando! ---------------------------------------
-    # Checando si a pessoa está comendo para poder falar!
+    # Manipulação com á variable falando! ---------------------------------------
+    # Checando si a pessoa está a comer para poder falar!
     def falar(self, assunto):
         if self.comendo:
             print(f'{self.nome} não pode falar está comendo')
@@ -24,7 +32,7 @@ class Pessoa:
         print(f'{self.nome} está falando sobre {assunto}.')
         self.falando = True
 
-    # Manipulação com á variavel falando! ---------------------------------------
+    # Manipulação com á variable falando! ---------------------------------------
     # Fazer a pessoa parar de falar!
     def parar_falar(self):
         if not self.falando:
@@ -34,7 +42,7 @@ class Pessoa:
         print(f'{self.nome} parou de falar!')
         self.falando = False
 
-    # Manipulação com á variavel comendo! ---------------------------------------
+    # Manipulação com á variable comendo! ---------------------------------------
     # Definindo status da função comer, mais que 01 vez
     def comer(self, alimento):
         if self.comendo: # Critério pra saber si é a 2 refeição
@@ -49,7 +57,7 @@ class Pessoa:
         print(f'{self.nome} está comendo {alimento}.') # Critério pra saber si é a 1 refeição
         self.comendo = True
 
-    # Manipulação com á variavel comendo! ---------------------------------------
+    # Manipulação com á variable comendo! ---------------------------------------
     # Definindo status da função comer, para PARAR de comer
     def para_comer(self):
         if not self.comendo:
@@ -59,6 +67,11 @@ class Pessoa:
 
         print(f'{self.nome} parou de comer.')
         self.comendo = False
+
+    # Manipulação com á variable idade! ---------------------------------------
+    # Definindo status da função idade, para o ano
+    def get_ano_nascimento(self):
+        return self.ano_atual - self.idade
 
 
 
