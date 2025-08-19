@@ -11,7 +11,11 @@ class Pessoa:
 
     # Definindo status da função comer
     def comer(self, alimento):
-        print(f'{self.nome} está comendo {alimento}.') # Passado o elemento {alimento}
+        if self.comendo: # Critério pra saber si é a 2 refeição
+            print(f'{self.nome} já está comendo {alimento}.')
+            return # O código para aqui!
+
+        print(f'{self.nome} está comendo {alimento}.') # Critério pra saber si é a 1 refeição
         self.comendo = True
 
 
