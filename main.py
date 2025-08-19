@@ -8,3 +8,6 @@ print(p1)
 
 print(p1.nome, p1.idade, 'anos')
 
+print(Pessoa.gera_id()) # Gerando pelo class
+print(p1.gera_id()) # Gerando
+

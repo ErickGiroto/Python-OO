@@ -1,5 +1,6 @@
 # Importando a biblioteca data
 from datetime import datetime
+from random import randint
 
 # Criando um molde que representa uma pessoa como objeto
 # Necessary a criação de uma classe para esse molde
@@ -70,13 +71,21 @@ class Pessoa:
 
     # Manipulação com á variable idade! ---------------------------------------
     # Definindo status da função idade, para o ano
-    def get_ano_nascimento(self):
+    # Tipo de Métodos
+    def get_ano_nascimento(self): # Aqui eu preciso da instancia SELF Método com instancia
         return self.ano_atual - self.idade
 
-    @classmethod
-    def por_ano_nascimento(cls, nome, ano_nascimento):
+    @classmethod # Decorador - Metodo de classe
+    def por_ano_nascimento(cls, nome, ano_nascimento): # Aqui eu não preciso da instancia SELF mas é referenta á Class
         idade = cls.ano_atual - ano_nascimento
         return cls(nome, idade)
+
+
+    @staticmethod # Decorador - Metodo stático
+    def gera_id(): # Utilizamos uma instancia ou class, não pode usar cls,self,...
+        rand = randint(10000, 19999)
+        return rand
+
 
 
 
