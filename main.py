@@ -1,7 +1,5 @@
 from pessoa import Pessoa
 
-# Tem que instanciar cada objeto vindo do mesmo molde
-p1 = Pessoa() # p1 é o objeto
-p2 = Pessoa() # p2 é o objeto
+p1 = Pessoa('Erick', 30) # p1(objeto) - Foi passado o valor nome(Erick), idade(30)
+p1.comer('maçã') # Foi passado o valor do alimento(Maça)
 
-p1.falar() # Chamando o objeto(p1) . metodo/função(falar)

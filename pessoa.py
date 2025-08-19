@@ -3,6 +3,15 @@
 
 class Pessoa:
     # Quando uma função está dentro de uma classe é chamado de metodo da classe
-    def falar(self): # self significa o direcionamento dessa função para o objeto
-        print('Pessoa está falando ...')
+    def __init__(self, nome, idade, comendo=False, falando=False): # self significa o direcionamento dessa função para o objeto
+        self.nome = nome
+        self.idade = idade
+        self.comendo = comendo
+        self.falando = falando
+
+    # Definindo status da função comer
+    def comer(self, alimento):
+        print(f'{self.nome} está comendo {alimento}.') # Passado o elemento {alimento}
+        self.comendo = True
+
 
